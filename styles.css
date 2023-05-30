@@ -1,146 +1,187 @@
+:root {
+    /* Primary */
+    --moderateViolet: hsl(263, 55%, 52%);
+    --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    /* Neutral */
+    --lightGray: hsl(0, 0%, 81%);
+    --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: 13px;
-    background-color: hsl(210, 46%, 95%);
+    background-color: var(--lightGrayishBlue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.image {
-    width: 35px;
-    border-radius: 50px;
-    float: left;
+
+*, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
-h2, h3 {
-    font-weight: 600;
+
+main {
+    margin: auto 1.5rem;
+    padding-block: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
-h3 {
-    margin-bottom: 0;
-}
-h4 {
-    font-weight: 500;
-    opacity: 50%;
-    margin-top: 0;
-}
-.quote {
-    position: absolute;
-    top: 0;
-    right: 15%;
-    opacity: 60%;
-}
-.testimonial p {
-    opacity: 70%;
-}
-.testimonial {
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
     border-radius: 10px;
+    box-shadow: 10px 10px 20px -10px var(--lightGray);
 }
-.daniel {
+
+.div-top {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.div-top img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+}
+
+h2 {
+    font-size: .85rem;
+    font-weight: 400;
+    line-height: 1.1rem;
+}
+
+h3 {
+    font-size: .7rem;
+    font-weight: 300;
+    opacity: .5;
+}
+
+.section-jeanette h3, .section-kira h3 {
+    opacity: .7;
+}
+
+h1 {
+    font-weight: 500;
+    padding-right: 1.6rem;
+}
+
+p {
+    opacity: .7;
+    font-weight: 300;
+    line-height: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+.section-jeanette p, .section-kira p {
+    font-weight: 500;
+}
+
+.section-daniel {
+    background-color: var(--moderateViolet);
+    color: var(--white);
     position: relative;
-    background-color: hsl(263, 55%, 52%);
-    color: hsl(0, 0%, 95%);
 }
-.daniel .image {
+
+.section-daniel img {
     border: 2px solid hsl(263, 55%, 70%);
 }
-.jonathan {
-    background-color: hsl(217, 19%, 35%);
-    color: hsl(0, 0%, 95%);
+
+.section-jonathan {
+    background-color: var(--veryDarkGrayishBlue);
+    color: var(--lightGrayishBlue);
 }
-.jonathan .image {
+
+.section-jonathan img {
     border: 2px solid hsl(0, 0%, 50%);
 }
-.jeanette, .kira {
-    background-color: hsl(0, 0%, 100%);
-    color: hsl(217, 19%, 35%);
+
+.section-jeanette, .section-kira {
+    background-color: var(--white);
+    color: var(--veryDarkBlackishBlue);
 }
-.jeanette p, .kira p {
-    opacity: 85%;
-    color: hsl(0, 0%, 0%);
-}
-.jeanette .image, .kira .image {
+
+.section-jeanette img, .section-kira img {
     border: 2px solid hsl(0, 0%, 95%);
 }
-.patrick {
-    background-color: hsl(219, 29%, 14%);
-    color: hsl(0, 0%, 95%);
+
+.section-patrick {
+    background-color: var(--veryDarkBlackishBlue);
+    color: var(--lightGrayishBlue);
 }
-.patrick .image {
+
+.section-patrick img {
     border: 2px solid hsl(263, 55%, 50%);
+}
+
+.section-daniel::after {
+    content: url("images/bg-pattern-quotation.svg");
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    opacity: .5;
 }
 
 /* Footer */
 footer { 
+    color: var(--veryDarkGrayishBlue);
     font-size: 11px; 
     text-align: center; 
 }
 footer a { 
-    color: hsl(228, 45%, 44%); 
-}
-
-/* Mobile */
-@media screen and (max-width: 700px) {
-    body {
-        margin: 15% auto 0%;
-    }
-    .testimonial {
-        margin: 7%;
-        padding: 7% 10%;
-    }
-    .image {
-        margin-right: 10px;
-    }
-    h3 {
-        padding-top: 1%;
-    }
-    .testimonial p, h4 {
-        font-weight: 300;
-        line-height: 1.1rem;
-    }
-    footer {
-        margin: 0;
-        padding-top: 10%;
-    }
+    text-decoration: none;
+    color: var(--moderateViolet); 
 }
 
 /* Desktop */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
     main {
-        margin: 10%;
+        margin: auto 7rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 25px; 
     }
-    .testimonial {
-        padding: 10px 30px;
-        box-shadow: 5px 5px 30px hsl(0, 0%, 81%);
+    
+    section {
+        padding: 1.5rem 2rem;
+        box-shadow: 10px 10px 30px -10px var(--lightGray);
     }
-    .daniel {
-        grid-column: 1/3;
-        grid-row: 1;
+
+    .section-daniel, .section-patrick {
+        grid-column: span 2;
     }
-    .jonathan {
-        grid-column: 3;
-        grid-row: 1;
-    }
-    .jeanette {
-        grid-column: 1;
-        grid-row: 2;
-    }
-    .kira {
+
+    .section-kira {
+        grid-row: 1 / span 2;
         grid-column: 4;
-        grid-row: 1/3;
     }
-    .patrick {
-        grid-column: 2/4;
-        grid-row: 2;
+    
+    h1 {
+        padding-right: 1.2rem;
+    } 
+
+    p {
+        padding-right: 1.1rem;
     }
-    .image {
-        margin-right: 10px;
+    
+    .section-daniel::after {
+        right: 6rem;
     }
-    h3 {
-        padding-top: .8%;
+
+    .section-kira p {
+        padding-right: .5rem;
     }
-    .testimonial p, h4 {
-        font-weight: 300;
-        line-height: 1.1rem;
-        word-spacing: 1px;
-        letter-spacing: .5px;
+}
+
+@media screen and (min-width: 1400px) {
+    main {
+        margin: auto 10rem;
     }
 }
